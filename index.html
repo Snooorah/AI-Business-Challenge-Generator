@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Business Challenge Topic Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    select, button {
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Business Challenge Topic Generator</h1>
+    <p>Select your Major and click Generate to receive your Business Challenge Topics.</p>
+
+    <select id="majorSelect">
+      <option value="technical">Technical</option>
+      <option value="welder">Welder</option>
+      <option value="draftsman">Draftsman</option>
+      <option value="clerk">Clerk</option>
+      <option value="operator">Operator</option>
+    </select>
+    
+    <button onclick="generateTopics()">Generate Topics</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    function generateTopics() {
+      var major = document.getElementById("majorSelect").value;
+      var topics;
+
+      if (major === "technical") {
+        topics = "1. Develop an innovative tool for automation in technical processes.\n2. Create a predictive maintenance system for machinery.";
+      } else if (major === "welder") {
+        topics = "1. Explore new welding techniques for advanced materials.\n2. Design a safety protocol for welding operations in confined spaces.";
+      } else if (major === "draftsman") {
+        topics = "1. Design a blueprint for a sustainable building.\n2. Create a digital prototype of an architectural structure.";
+      } else if (major === "clerk") {
+        topics = "1. Develop a data entry automation tool for administrative tasks.\n2. Optimize document management systems in large organizations.";
+      } else if (major === "operator") {
+        topics = "1. Develop an efficient process flow for factory production lines.\n2. Create a monitoring system for operational efficiency in manufacturing.";
+      }
+
+      document.getElementById("result").innerText = "Generated Topics:\n" + topics;
+    }
+  </script>
+</body>
+</html>
